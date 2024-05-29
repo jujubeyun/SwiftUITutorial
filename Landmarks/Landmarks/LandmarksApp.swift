@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+@main // 앱의 진입점
 struct LandmarksApp: App {
     var body: some Scene {
         WindowGroup {
