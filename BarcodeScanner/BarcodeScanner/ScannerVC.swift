@@ -24,9 +24,9 @@ final class ScannerVC: UIViewController {
     var previewLayer: AVCaptureVideoPreviewLayer?
     weak var scannerDelegate: ScannerVCDelegate?
     
-    init(scannerVCDelegate: ScannerVCDelegate) {
+    init(scannerDelegate: ScannerVCDelegate) {
         super.init(nibName: nil, bundle: nil)
-        self.scannerDelegate = scannerVCDelegate
+        self.scannerDelegate = scannerDelegate
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
