@@ -20,6 +20,7 @@ struct FrameworkTitleView: View {
                 .fontWeight(.semibold)
                 .scaledToFit() // give the ability to shrink if needed
                 .minimumScaleFactor(0.6) // it can shrink until 60% of original size
+                .foregroundStyle(Color(.label))
         }
         .padding()
     }
