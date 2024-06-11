@@ -87,8 +87,8 @@
 		6B9D71372C17E30000CBCBA8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6B9D713C2C17E32200CBCBA8 /* FrameworkDetailView */,
 				6B9D713B2C17E31800CBCBA8 /* FrameworkGridView */,
+				6B9D713C2C17E32200CBCBA8 /* FrameworkDetailView */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
