@@ -108,8 +108,8 @@
 		6B31C8802C198930009BE09C /* AppetizerListView */ = {
 			isa = PBXGroup;
 			children = (
-				6B31C8692C1922C7009BE09C /* AppetizerListView.swift */,
 				6B31C8772C195B8D009BE09C /* AppetizerListViewModel.swift */,
+				6B31C8692C1922C7009BE09C /* AppetizerListView.swift */,
 				6B31C88C2C198CCA009BE09C /* AppetizerDetailView.swift */,
 			);
 			path = AppetizerListView;
