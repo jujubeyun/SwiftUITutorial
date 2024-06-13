@@ -25,6 +25,8 @@
 		6B31C88D2C198CCA009BE09C /* AppetizerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B31C88C2C198CCA009BE09C /* AppetizerDetailView.swift */; };
 		6B31C8902C1AD51D009BE09C /* APButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B31C88F2C1AD51D009BE09C /* APButton.swift */; };
 		6B31C8922C1AD6A2009BE09C /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B31C8912C1AD6A2009BE09C /* XDismissButton.swift */; };
+		6BAA06632C1AE1F00080EC66 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA06622C1AE1F00080EC66 /* AccountViewModel.swift */; };
+		6BAA06652C1AE43F0080EC66 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA06642C1AE43F0080EC66 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		6B31C88C2C198CCA009BE09C /* AppetizerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailView.swift; sourceTree = "<group>"; };
 		6B31C88F2C1AD51D009BE09C /* APButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APButton.swift; sourceTree = "<group>"; };
 		6B31C8912C1AD6A2009BE09C /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		6BAA06622C1AE1F00080EC66 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		6BAA06642C1AE43F0080EC66 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		6B31C8812C198947009BE09C /* AccountView */ = {
 			isa = PBXGroup;
 			children = (
+				6BAA06622C1AE1F00080EC66 /* AccountViewModel.swift */,
 				6B31C86B2C1922D7009BE09C /* AccountView.swift */,
 			);
 			path = AccountView;
@@ -138,6 +143,7 @@
 		6B31C8832C1989AC009BE09C /* Utilizers */ = {
 			isa = PBXGroup;
 			children = (
+				6BAA06662C1AE4420080EC66 /* Extensions */,
 				6B31C8862C198A01009BE09C /* Alerts */,
 				6B31C8842C1989CD009BE09C /* Managers */,
 			);
@@ -213,6 +219,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		6BAA06662C1AE4420080EC66 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA06642C1AE43F0080EC66 /* String+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BAA06652C1AE43F0080EC66 /* String+Ext.swift in Sources */,
 				6B31C8702C193128009BE09C /* Appetizer.swift in Sources */,
 				6B31C8762C194625009BE09C /* APError.swift in Sources */,
 				6B31C86C2C1922D7009BE09C /* AccountView.swift in Sources */,
@@ -298,6 +313,7 @@
 				6B31C87A2C195F6A009BE09C /* Alert.swift in Sources */,
 				6B31C86A2C1922C7009BE09C /* AppetizerListView.swift in Sources */,
 				6B31C86E2C1922E5009BE09C /* OrderView.swift in Sources */,
+				6BAA06632C1AE1F00080EC66 /* AccountViewModel.swift in Sources */,
 				6B31C8922C1AD6A2009BE09C /* XDismissButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
