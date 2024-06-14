@@ -18,6 +18,7 @@
 		6B0922482C16F9C9005ABB7D /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0922472C16F9C9005ABB7D /* SafariView.swift */; };
 		6B09224A2C17DFE4005ABB7D /* FrameworkTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0922492C17DFE4005ABB7D /* FrameworkTitleView.swift */; };
 		6B09224C2C17E082005ABB7D /* XDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B09224B2C17E082005ABB7D /* XDismissButton.swift */; };
+		6BAA06732C1C2F3E0080EC66 /* FrameworkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA06722C1C2F3E0080EC66 /* FrameworkDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		6B0922472C16F9C9005ABB7D /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		6B0922492C17DFE4005ABB7D /* FrameworkTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkTitleView.swift; sourceTree = "<group>"; };
 		6B09224B2C17E082005ABB7D /* XDismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDismissButton.swift; sourceTree = "<group>"; };
+		6BAA06722C1C2F3E0080EC66 /* FrameworkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				6B0922412C16D9CA005ABB7D /* FrameworkDetailView.swift */,
+				6BAA06722C1C2F3E0080EC66 /* FrameworkDetailViewModel.swift */,
 			);
 			path = FrameworkDetailView;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BAA06732C1C2F3E0080EC66 /* FrameworkDetailViewModel.swift in Sources */,
 				6B0922422C16D9CA005ABB7D /* FrameworkDetailView.swift in Sources */,
 				6B0922322C16B9B7005ABB7D /* FrameworkGridView.swift in Sources */,
 				6B09224C2C17E082005ABB7D /* XDismissButton.swift in Sources */,

@@ -24,7 +24,8 @@ struct FrameworkGridView: View {
             }
             .navigationTitle("🍎 Frameworks")
             .navigationDestination(for: Framework.self) { framework in
-                FrameworkDetailView(framework: framework)
+                let viewModel = FrameworkDetailViewModel(framework: framework)
+                FrameworkDetailView(viewModel: viewModel)
             }
         }
     }
