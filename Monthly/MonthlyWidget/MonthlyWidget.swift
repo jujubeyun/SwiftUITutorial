@@ -9,22 +9,22 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: AppIntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+    func placeholder(in context: Context) -> DayEntry {
+        DayEntry(date: Date(), configuration: ConfigurationAppIntent())
     }
 
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> DayEntry {
+        DayEntry(date: Date(), configuration: configuration)
     }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
+    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<DayEntry> {
+        var entries: [DayEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+        for dayOffset in 0 ..< 7 {
+            let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
+            let startOfDate = Calendar.current.startOfDay(for: entryDate)
+            let entry = DayEntry(date: startOfDate, configuration: configuration)
             entries.append(entry)
         }
 
@@ -32,21 +32,43 @@ struct Provider: AppIntentTimelineProvider {
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct DayEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationAppIntent
 }
 
 struct MonthlyWidgetEntryView : View {
-    var entry: Provider.Entry
-
+    var entry: DayEntry
+    var config: MonthConfig
+    
+    init(entry: DayEntry) {
+        self.entry = entry
+        self.config = MonthConfig.determineConfig(from: entry.date)
+    }
+    
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+        ZStack {
+            ContainerRelativeShape()
+                .fill(config.backgroundColor.gradient)
+            
+            VStack {
+                HStack(spacing: 4) {
+                    Text(config.emojiText)
+                        .font(.title)
+                    Text(entry.date.weekdayDisplayFormat)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.6)
+                        .foregroundStyle(config.weekdayTextColor)
+                    Spacer()
+                }
+                
+                Text(entry.date.dayDisplayFormat)
+                    .font(.system(size: 80, weight: .heavy))
+                    .foregroundStyle(config.dayTextColor)
+            }
+            .padding()
         }
     }
 }
@@ -59,6 +81,10 @@ struct MonthlyWidget: Widget {
             MonthlyWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
+        .contentMarginsDisabled()
+        .configurationDisplayName("Monthly Style Widget")
+        .description("The theme of the widget changes based on month.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
@@ -79,6 +105,16 @@ extension ConfigurationAppIntent {
 #Preview(as: .systemSmall) {
     MonthlyWidget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    DayEntry(date: .now, configuration: .smiley)
+}
+
+
+extension Date {
+    var weekdayDisplayFormat: String {
+        self.formatted(.dateTime.weekday(.wide))
+    }
+    
+    var dayDisplayFormat: String {
+        self.formatted(.dateTime.day())
+    }
 }
